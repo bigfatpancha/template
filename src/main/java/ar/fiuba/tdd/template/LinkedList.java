@@ -2,7 +2,7 @@ package ar.fiuba.tdd.template;
 
 public class LinkedList<T> {
 
-    private Nodo<T> first;
+    private Node<T> first;
     private int size;
 
     public LinkedList() {
@@ -19,7 +19,7 @@ public class LinkedList<T> {
     }
 
     public void addFirst(T item) {
-        Nodo<T> newNode = new Nodo<T>(item);
+        Node<T> newNode = new Node<T>(item);
         try {
             newNode.setNext(this.first);
             add(newNode);
@@ -28,18 +28,18 @@ public class LinkedList<T> {
         }
     }
 
-    private void add(Nodo<T> newNode) {
+    private void add(Node<T> newNode) {
         this.first = newNode;
         this.size++;
     }
 
     public void addLast(T item) {
-        Nodo<T> newNode = new Nodo<T>(item);
-        Nodo<T> auxNode;
+        Node<T> newNode = new Node<T>(item);
+        Node<T> auxNode;
 
-        if (isEmpty()) {
+        if (isEmpty())
             addFirst(item);
-        } else {
+        else {
             auxNode = this.first;
             while (auxNode.getNext() != null) {
                 auxNode = auxNode.getNext();
@@ -71,10 +71,10 @@ public class LinkedList<T> {
 
     public T top() throws EmptyListException {
         try {
-            T dato = getFirst();
+            T data = getFirst();
             removeFirst();
             this.size --;
-            return dato;
+            return data;
         } catch (Exception e) {
             throw new EmptyListException();
         }

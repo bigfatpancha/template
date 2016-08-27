@@ -1,11 +1,11 @@
 package ar.fiuba.tdd.template;
 
-public class Nodo<T> {
+public class Node<T> {
 
     private T data;
-    private Nodo<T> next;
+    private Node<T> next;
 
-    public Nodo(T data) {
+    public Node(T data) {
         next = null;
         this.data = data;
     }
@@ -14,11 +14,11 @@ public class Nodo<T> {
         return data;
     }
 
-    public Nodo<T> getNext() {
+    public Node<T> getNext() {
         return next;
     }
 
-    public void setNext(Nodo<T> next) {
+    public void setNext(Node<T> next) {
         this.next = next;
     }
 }
