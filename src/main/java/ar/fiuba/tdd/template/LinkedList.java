@@ -67,7 +67,6 @@ public class LinkedList<T> {
 
     public int size() {
         return this.size;
-
     }
 
     public T top() throws EmptyListException {
